@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -26,8 +27,12 @@ const Header = () => {
                         </li>
                     </ul>
                     <div className="items-center flex-shrink-0 hidden lg:flex">
-                        <button className="self-center px-8 py-3 rounded">Sign in</button>
-                        <button className="self-center px-8 py-3 font-semibold rounded bg-sky-600 text-gray-50">Sign up</button>
+                        <Link to='/signin'>
+                            <button className="self-center px-8 py-3 rounded">Sign in</button>
+                        </Link>
+                        <Link to='/signup'>
+                            <button className="self-center px-8 py-3 font-semibold rounded bg-sky-600 text-gray-50">Sign up</button>
+                        </Link>
                     </div>
                     <button className="p-4 lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-gray-800">

@@ -7,24 +7,26 @@ import SignIn from "../pages/SignIn/SignIn";
 
 export const routes = createBrowserRouter([
     {
-        path:'/',
+        path: '/',
         element: <Main></Main>,
         children: [
             {
                 path: '/',
-                element: <Home/>
+                element: <Home />,
+                loader: () => fetch(`https://khan-academy-server.vercel.app/courses`)
+
             },
             {
                 path: '/home',
-                element: <Home/>
+                element: <Home />
             },
             {
                 path: '/signup',
-                element: <SignUp/>
+                element: <SignUp />
             },
             {
                 path: '/signin',
-                element: <SignIn/>
+                element: <SignIn />
             },
         ]
     }

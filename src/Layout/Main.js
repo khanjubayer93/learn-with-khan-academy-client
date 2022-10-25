@@ -1,4 +1,3 @@
-import { Container } from 'postcss';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Footer from '../pages/Footer/Footer';
@@ -9,11 +8,11 @@ const Main = () => {
     return (
         <div>
             <Header></Header>
-            <div className='flex'>
-                <div className='grid grid-cols-1'>
+            <div className=''>
+                <div className=''>
                     <LeftSideNav></LeftSideNav>
                 </div>
-                <div className='grid grid-cols-3'>
+                <div className=''>
                     <Outlet></Outlet>
                 </div>
             </div>
