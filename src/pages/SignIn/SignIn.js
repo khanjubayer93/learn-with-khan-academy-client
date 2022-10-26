@@ -1,9 +1,27 @@
 import React from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../../Contexts/UserContext';
 
 const SignIn = () => {
+    const { signIn } = useContext(AuthContext)
+    const handleSignIn = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password)
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error => console.error(error.message))
+
+    }
+
     return (
         <div>
-            <form>
+            <form onSubmit={handleSignIn}>
                 <div className="hero min-h-screen bg-base-200">
                     <div className="hero-content flex-col">
                         <div className="text-center lg:text-left">
