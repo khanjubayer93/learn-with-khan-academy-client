@@ -3,18 +3,23 @@ import { useLoaderData } from 'react-router-dom';
 import SingleCourse from '../SingleCourse/SingleCourse';
 
 const Home = () => {
-    const AllCourse = useLoaderData();
+    const allCourse = useLoaderData();
+    console.log(allCourse)
     return (
         <div>
-            <h3>All course {AllCourse.length}</h3>
-            {
-                AllCourse.map(course=>
-                    <SingleCourse
-                    key={course.id}
-                    course={course}
-                    ></SingleCourse>
-                )
-            }
+            <div>
+                <h3>All course {allCourse.length}</h3>
+            </div>
+            <div className='grid grid-cols-3'>
+                {
+                    allCourse.map(course =>
+                        <SingleCourse
+                            key={course.id}
+                            course={course}
+                        ></SingleCourse>
+                    )
+                }
+            </div>
 
             
         </div>

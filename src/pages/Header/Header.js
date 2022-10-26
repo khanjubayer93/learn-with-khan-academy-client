@@ -7,8 +7,6 @@ import { AuthContext } from '../../Contexts/UserContext';
 const Header = () => {
     const { user, } = useContext(AuthContext)
 
-
-
     return (
         <div>
             <header className="p-4 bg-gray-100 text-gray-800">
@@ -20,9 +18,10 @@ const Header = () => {
                         <li className="flex">
                             <Link className="flex items-center px-4 -mb-1 border-b-2 border-transparent ">
                                 {
-                                    user?.photoURL ?
-                                        <img className='w-10 rounded-full' src={user.photoURl} />
-                                        : <FaUser></FaUser>
+                                    user?.photoURL?
+                                        <img className='w-10 rounded-full' src={user.photoURL2} />
+                                        : 
+                                        <FaUser></FaUser>          
                                 }
                             </Link>
                         </li>
@@ -31,7 +30,7 @@ const Header = () => {
                                 {user?.displayName} </Link>
                         </li>
                         <li className="flex">
-                            <Link className="flex items-center px-4 -mb-1 border-b-2 border-transparent hover:text-sky-600 hover:border-sky-600">Link</Link>
+                            <Link to='/' className="flex items-center px-4 -mb-1 border-b-2 border-transparent hover:text-sky-600 hover:border-sky-600">Home</Link>
                         </li>
                         <li className="flex">
                             <Link className="flex items-center px-4 -mb-1 border-b-2 border-transparent hover:text-sky-600 hover:border-sky-600">Link</Link>

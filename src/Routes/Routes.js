@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import Main from "../Layout/Main";
+import Main from "../Layout/Main/Main";
 import Home from "../pages/Home/Home";
 import SignUp from "../pages/SignUP/SignUp";
 import SignIn from "../pages/SignIn/SignIn";
+import LeftSideNav from "../pages/LeftSideNav/LeftSideNav";
 
 
 export const routes = createBrowserRouter([
@@ -18,7 +19,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/home',
-                element: <Home />
+                element: <Home/>
             },
             {
                 path: '/signup',
@@ -28,6 +29,11 @@ export const routes = createBrowserRouter([
                 path: '/signin',
                 element: <SignIn />
             },
+            {
+                path: '/title',
+                element: <LeftSideNav></LeftSideNav>,
+                loader: () => fetch(`https://khan-academy-server.vercel.app/courses/`)
+            }
         ]
     }
 
