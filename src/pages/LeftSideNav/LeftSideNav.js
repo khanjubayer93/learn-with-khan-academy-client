@@ -12,7 +12,7 @@ const LeftSideNav = () => {
     }, [])
     // console.log(course);
     return (
-        <div>
+        <div className='hidden lg:block'>
             <h2>Total Course: {course.length}</h2>
             {
                 course.map(course => <p
