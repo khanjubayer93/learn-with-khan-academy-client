@@ -8,11 +8,11 @@ const Home = () => {
     return (
         <div>
             <div>
-                <h3>All course {allCourse.length}</h3>
+                <h3>All course {allCourse?.length}</h3>
             </div>
             <div className='grid grid-cols-3'>
                 {
-                    allCourse.map(course =>
+                    allCourse?.map(course =>
                         <SingleCourse
                             key={course.id}
                             course={course}
@@ -21,7 +21,7 @@ const Home = () => {
                 }
             </div>
 
-            
+
         </div>
     );
 };

@@ -14,12 +14,13 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: () => fetch(`https://khan-academy-server.vercel.app/courses`)
+                loader: async () => fetch(`https://khan-academy-server.vercel.app/courses`)
 
             },
             {
                 path: '/home',
-                element: <Home/>
+                element: <Home />,
+                loader: async () => fetch(`https://khan-academy-server.vercel.app/courses`)
             },
             {
                 path: '/signup',
@@ -29,11 +30,7 @@ export const routes = createBrowserRouter([
                 path: '/signin',
                 element: <SignIn />
             },
-            {
-                path: '/title',
-                element: <LeftSideNav></LeftSideNav>,
-                loader: () => fetch(`https://khan-academy-server.vercel.app/courses/`)
-            }
+            
         ]
     }
 

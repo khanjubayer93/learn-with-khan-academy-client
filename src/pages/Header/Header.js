@@ -11,15 +11,18 @@ const Header = () => {
         <div>
             <header className="p-4 bg-gray-100 text-gray-800">
                 <div className="container flex justify-between h-16 mx-auto">
-                    <Link to='/home' className="flex items-center p-2">
-                        <img className='w-12 rounded-full' src="https://cutt.ly/rNalB3j" />
-                    </Link>
+                    <div className='flex items-center p-2'>
+                        <Link to='/' className="">
+                            <img className='w-12 rounded-full' src="https://cutt.ly/rNalB3j" />
+                        </Link>
+                        <p className='ml-2 text-sky-600 text-xl font-semibold'>LEARN WITH KHAN ACADEMY</p>
+                    </div>
                     <ul className="items-stretch hidden space-x-3 lg:flex">
                         <li className="flex">
                             <Link className="flex items-center px-4 -mb-1 border-b-2 border-transparent ">
                                 {
                                     user?.photoURL?
-                                        <img className='w-10 rounded-full' src={user.photoURL2} />
+                                        <img className='w-10 rounded-full' src={user.photoURL} />
                                         : 
                                         <FaUser></FaUser>          
                                 }
