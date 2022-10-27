@@ -7,9 +7,6 @@ const Home = () => {
     console.log(allCourse)
     return (
         <div>
-            <div>
-                <h3>All course {allCourse?.length}</h3>
-            </div>
             <div className='grid grid-cols-3'>
                 {
                     allCourse?.map(course =>

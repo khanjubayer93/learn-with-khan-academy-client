@@ -42,6 +42,9 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+                <div className='flex justify-center pb-2'>
+                    <p><small>© Learn With Khan Academy</small></p>
+                </div>
             </footer>
         </div>
     );
