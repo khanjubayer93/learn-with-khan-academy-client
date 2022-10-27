@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { FaUser } from 'react-icons/fa';
+import { FaMoon, FaSun, FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/UserContext';
 
@@ -35,8 +35,18 @@ const Header = () => {
                         <li className="flex">
                             <Link to='/' className="flex items-center px-4 -mb-1 border-b-2 border-transparent hover:text-sky-600 hover:border-sky-600">Home</Link>
                         </li>
+                        {/* toggle */}
                         <li className="flex">
-                            <Link className="flex items-center px-4 -mb-1 border-b-2 border-transparent hover:text-sky-600 hover:border-sky-600">Link</Link>
+                            
+                            <label for="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer text-gray-800">
+                                <span><FaMoon></FaMoon></span>
+                                <span className="relative">
+                                    <input id="Toggle1" type="checkbox" className="hidden peer" />
+                                    <div className="w-10 h-6 rounded-full shadow-inner bg-gray-600 peer-checked:bg-sky-100"></div>
+                                    <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto bg-gray-100"></div>
+                                </span>
+                                <span><FaSun></FaSun></span>
+                            </label>
                         </li>
                     </ul>
                     <div className="items-center flex-shrink-0 hidden lg:flex">

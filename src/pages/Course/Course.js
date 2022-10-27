@@ -7,7 +7,7 @@ const Course = () => {
     console.log(course)
 
     return (
-        <div>
+        <div className='grid sm:grid-cols-1'>
             <h2>Course Name: {title}</h2>
             <div className="w-1/3 p-6 rounded-md shadow-md bg-gray-50 text-gray-900">
                 <img src={image} alt="" className="object-cover object-center w-full rounded-md h-72" />
