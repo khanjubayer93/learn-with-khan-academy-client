@@ -10,7 +10,7 @@ const Main = () => {
         <div>
             <Header></Header>
             <div className='course-container'>
-                <div className=''>
+                <div className='p-5'>
                     <LeftSideNav></LeftSideNav>
                 </div>
                 <div className=''>

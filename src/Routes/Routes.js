@@ -33,7 +33,8 @@ export const routes = createBrowserRouter([
             },
             {
                 path:'/course/:id',
-                element: <Course></Course>
+                element: <Course></Course>,
+                loader: ({params}) => fetch(`https://khan-academy-server.vercel.app/course/${params.id}`)
             }
         ]
     }

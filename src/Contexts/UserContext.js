@@ -19,8 +19,13 @@ const UserContext = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
 
     }
-    // sign in with google provider
+    // sign up with google provider
     const googleProviderLogin =(provider)=>{
+        return signInWithPopup(auth, provider)
+    }
+
+    //sign up with github provider
+    const githubProviderLogin =(provider) =>{
         return signInWithPopup(auth, provider)
     }
 
@@ -43,7 +48,8 @@ const UserContext = ({ children }) => {
         user,
         createUser,
          signIn ,
-        googleProviderLogin
+        googleProviderLogin,
+        githubProviderLogin
     }
 
     return (

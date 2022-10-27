@@ -10,7 +10,7 @@ const LeftSideNav = () => {
             .then(res => res.json())
             .then(data => setCourse(data))
     }, [])
-    console.log(course);
+    // console.log(course);
     return (
         <div>
             <h2>Total Course: {course.length}</h2>

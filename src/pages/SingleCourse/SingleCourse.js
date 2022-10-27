@@ -14,7 +14,7 @@ const SingleCourse = ({ course }) => {
                         <p className="text-gray-800">
                             {
                                 description.length > 150 ? 
-                                <>{description.slice(0, 80) + '...'} <Link to={`/courses/${id}`}>See more</Link></>
+                                <>{description.slice(0, 80) + '...'} <Link to={`/course/${id}`}>See more</Link></>
                                     :
                                     description
 

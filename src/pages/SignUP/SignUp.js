@@ -1,12 +1,13 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useContext } from 'react';
-import { FaGoogle } from 'react-icons/fa';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Contexts/UserContext';
 
 const SignUp = () => {
-    const { createUser, googleProviderLogin } = useContext(AuthContext);
+    const { createUser, googleProviderLogin, githubProviderLogin } = useContext(AuthContext);
     const provider = new GoogleAuthProvider();
+    const gitProvider = new GithubAuthProvider()
 
     // sign up with google 
     const handleGoogleLogin = () => {
@@ -14,6 +15,16 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+            })
+            .catch(error => console.error(error.message))
+    }
+
+    // sign up with github
+    const handleGithubLogin = () => {
+        githubProviderLogin(gitProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
             })
             .catch(error => console.error(error.message))
     }
@@ -33,8 +44,6 @@ const SignUp = () => {
                 console.log(user);
             })
             .catch(error => console.error(error.message))
-
-
     }
     return (
         <div>
@@ -73,9 +82,12 @@ const SignUp = () => {
                                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                     </label>
                                 </div>
-                                <div>
-                                    <button onClick={handleGoogleLogin}>
+                                <div className='text-xl'>
+                                    <button className='mr-3' onClick={handleGoogleLogin}>
                                         <FaGoogle></FaGoogle>
+                                    </button>
+                                    <button onClick={handleGithubLogin}>
+                                        <FaGithub></FaGithub>
                                     </button>
                                 </div>
                                 <div className="form-control mt-6">
